@@ -1,0 +1,25 @@
+<h2>Members List!</h2>
+<table class="table caption-top">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Title</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of membersData">
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.name}}</td>
+      <td>{{data.title}}</td>
+      <td>{{data.email}}</td>
+      <td>
+        <i (click)="deleteMember(data.id)" class="fa fa-trash"></i>
+        &nbsp;
+        <a routerLink="/edit/{{data.id}}"><i class="fa fa-edit"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
